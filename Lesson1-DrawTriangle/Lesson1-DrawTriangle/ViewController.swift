@@ -55,7 +55,7 @@ private extension ViewController {
         let renderPassDescriptor = MTLRenderPassDescriptor()
         renderPassDescriptor.colorAttachments[0].texture = drawable.texture
         renderPassDescriptor.colorAttachments[0].loadAction = .clear
-        renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.5, green: 0.5, blue: 0.6, alpha: 1.0)
         
         /*
          MTLRenderCommandEncoder拼接渲染、计算、标脏的指令到command buffer中，command buffer最终提交到运行的设备上
