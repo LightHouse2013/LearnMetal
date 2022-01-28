@@ -11,7 +11,7 @@ import simd
 
 class ViewController: UIViewController {
     
-    var mtlDevice = MTLCreateSystemDefaultDevice()!
+    let mtlDevice = MTLCreateSystemDefaultDevice()!
     var commandQueue: MTLCommandQueue!
     var mtlLibary: MTLLibrary!
     var pipelineState: MTLRenderPipelineState!
@@ -108,7 +108,7 @@ private extension ViewController {
     }
     
     func setupPipelineState() {
-        // 获取默认的libary，main bundle里的shader都会被加载到这里，并加载fragment和vertex函数
+        // 获取默认的library，main bundle里的shader都会被加载到这里，并获取fragment和vertex函数
         mtlLibary = mtlDevice.makeDefaultLibrary()!
         let fragmentProgram = mtlLibary.makeFunction(name: "basic_fragment")
         let vertexProgram = mtlLibary.makeFunction(name: "basic_vertex")
